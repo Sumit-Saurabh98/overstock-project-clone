@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image" href="https://media.glassdoor.com/sql/14907/overstock-com-squarelogo-1529535998697.png">
+    <link rel="stylesheet" href="./payment.css">
+    <title>Pay</title>
+</head>
+<body>
+    
+    <div id="container">
+
+        <div id="header">
+            <div></div>
+         <img src="https://ak1.ostkcdn.com/img/mxc/OSTK_MAIN_LOGO_20181127KCH.jpg" alt="">
+        <p>You are using secure server</p>
+
+        </div>
+
+        <div id="bar"></div>
+
+
+        <div id="header-2">
+
+            <img src="https://ak1.ostkcdn.com/img/mxc/20170922_fedexLogo.png" alt="">
+            <h5>Secure checkout provided by FedEx International.<br>
+                Your order total includes customs and taxes, if applicable.</h5>
+
+        </div>
+        <a href="cart.html">&lt&ltBack to cart</a>
+
+        <div id="form">
+
+            <table>
+
+                <thead>
+                    <th id="heading">
+                        Shipping Address
+                    </th>
+                    <th></th>
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                       <td>Email <span>*</span></td>
+                       <td><input id="email" type="email"></td>
+                    </tr>
+                     <tr>
+
+                        <td>First Name <span>*</span></td>
+                        <td><input id="fname" type="text"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Last Name <span>*</span></td>
+                        <td><input id="lname" type="text"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Address Line <span>*</span></td>
+                        <td><input id="address" type="text"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Country <span>*</span></td>
+                        <td><select name="" id="country">
+                            <option value="india">India</option>
+                            <option value="Dubai">Dubai</option>
+                            <option value="Dub">Sri Lanka</option>
+                            <option value="Du">Bangladesh</option>
+                        </select></td>
+                     </tr>
+
+                     <tr>
+
+                        <td>State <span>*</span></td>
+                        <td><input id="state" type="text"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Zip Code <span>*</span></td>
+                        <td><input id="pincode" type="number"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Phone <span>*</span></td>
+                        <td><input id="phone" type="number"></td>
+                     </tr>
+
+                </tbody>
+
+            </table>
+
+
+        </div>
+
+        <div id="order-sum">
+            
+            <table>
+
+                <thead>
+                    <th id="heading">
+                        Order Summary
+                    </th>
+                    <th></th>
+                </thead>
+
+
+                <tbody>
+
+                    <!-- <tr>
+                        <td>Subtotal:</td>
+                        <td><span id="subtotal"></span>&nbspINR</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping:</td>
+                        <td><span id="shipping"></span>&nbspINR</td>
+                    </tr>
+                    <tr>
+                        <td>Duty and Tax:</td>
+                        <td><span id="tax"></span>&nbspINR</td>
+                    </tr> -->
+                    <tr>
+                        <td>Order Total:</td>
+                        <td><span id="total"></span>&nbspINR</td>
+                    </tr>
+
+
+                  
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+        <div id="payment">
+            <table>
+
+                <thead>
+                    <th id="heading">
+                        Payment Information
+                    </th>
+                    <th></th>
+                    
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+                        <td>
+                            <div>
+                                <img src="https://checkout-ostk.crossborder.fedex.com/static/css/images/pm/visa.png" alt="">
+                                <img src="https://checkout-ostk.crossborder.fedex.com/static/css/images/pm/mastercard.png" alt="">
+                            </div>
+                        </td>
+                    </tr>
+
+                    <tr>
+
+                        <td>Card Type <span>*</span></td>
+                        <td><select name="" id="cardType">
+                            <option value="visa">Visa</option>
+                            <option value="mastercard">Mastercard</option>
+                        </select></td>
+                     </tr>
+                     <tr>
+
+                        <td>Credit Card Number <span>*</span></td>
+                        <td><input id="ccn" type="number"></td>
+                     </tr>
+                     <tr>
+
+                        <td>Expiration Date <span>*</span></td>
+                        <td><div><select name="" id="month">
+                            <option value=""></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+
+                        <select name="" id="year">
+                            <option value=""></option>
+                            <option value="2022">2022</option>
+                            <option value="2023">2023</option>
+                            <option value="2024">2024</option>
+                            <option value="2025">2025</option>
+                            <option value="2026">2026</option>
+                            <option value="2027">2027</option>
+                            <option value="2028">2028</option>
+                            <option value="2029">2029</option>
+                            <option value="2030">2030</option>
+                            <option value="2031">2031</option>
+                            <option value="2032">2032</option>
+                            
+                        </select>
+                    
+                    </div></td>
+                     </tr>
+                     <tr>
+
+                        <td>Security Code <span>*</span></td>
+                        <td><input id="cvv"  type="text"></td>
+                     </tr>
+
+                     <tr>
+
+                        <td></td>
+                        <td><img src="data:image/gif;base64,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" alt=""></td>
+                     </tr>
+
+                  
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <button id="placeOrder">
+            Place Order >>
+        </button>
+
+    
+
+    </div>
+   
+
+
+</body>
+</html>
+<script src="/scripts/payment.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script>
+    var x=JSON.parse(localStorage.getItem("total_price")) || []
+    document.getElementById("total").textContent = x;
+    console.log(x)
+
+    document.getElementById("placeOrder").addEventListener("click",payfun)
+
+    function payfun(){
+        var sec=document.getElementById("cvv").value
+            if(sec!=="INRS001"){
+               alert("Error: Incorrect Security")
+
+    }else{
+        function redirectToHomePage() {
+  window.location.replace("lastpage.html");
+}
+
+redirectToHomePage();
+    }
+    }
+   
+
+  
+</script>

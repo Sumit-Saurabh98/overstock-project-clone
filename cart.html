@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title></title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+  
+    <style>
+      #prod {
+        margin-top: 100px;
+        display: grid;
+        grid-template-columns: 60% 40%;
+        margin-left: 5%;
+        margin-right: 5%;
+       width: 60%;
+       margin-left: 20%;
+       gap:2%;
+      }
+
+      #items {
+        display: flex;
+        flex-direction: column;
+        border: 3px solid rgb(185, 184, 184);
+        padding-top: 5%;
+         padding-left: 10%;
+         box-shadow: rgba(233, 63, 20, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+        
+        /* padding-right: 30%; */
+       
+      }
+
+      #total {
+        padding-left: 20px;
+        border: 3px solid rgb(233, 20, 20);
+        padding-top: 30px;
+        font-family: Arial, Helvetica, sans-serif;
+        padding-right: 20px;
+        box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+       
+      }
+
+      #side {
+        display: flex;
+        justify-content: space-around;
+        
+      }
+      #total p{
+        font-size: 20px;
+       color: rgb(0, 0, 0);
+       font-weight: bolder;
+      margin-bottom: -10px;
+      } 
+
+      span{
+       font-size: 20px;
+       color: rgb(0, 0, 0);
+       font-weight: bolder;
+       padding-left: 20px;
+      }
+
+      .image{
+        width: 50%;
+        height: 200px;
+      }
+      .button1{
+        margin-bottom: 20px;
+        width: 30%;
+        border-radius: 4px ;
+        height: 30px;
+       font-family:Arial, Helvetica, sans-serif;
+       /* font-weight: bolder; */
+       font-size: 15px;
+      }
+      .button1:hover{
+        background-color: rgb(238, 30, 30);
+      }
+      .rating{
+        margin-top: -15px;
+      }
+      .price{
+        margin-top: -10px;
+      }
+      #pay{
+        width: 100%;
+        height: 35px;
+        font-family:Arial, Helvetica, sans-serif;
+        font-weight: bolder;
+        background-color: black;
+        color: white;
+      }
+
+      /* _______________________________________________________ */
+      .level-1{
+    display:flex;
+    gap: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 30px;
+    background-color:rgb(235, 240, 245);
+}
+.level-1 >img{
+        width: 40px;
+        height:30px;
+        margin-top: -3px;
+        clip-path: circle();
+        margin-left: -3px;
+        
+
+}
+.level-1 p{
+    margin-top: 2px;
+    margin-left: 13px;
+    font-family: Arial;
+    color: rgb(167, 173, 177);
+}
+.level-1 h5{
+    margin-top: 4px;
+    font-family: Arial;
+    font-size: 15px;
+}
+.level-2{
+    width: 100%;
+    display:flex;
+    gap: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+.logo>img{
+    width: 35px;
+    height: 35px;
+    margin-right: 1px;
+    margin-top: 35px;
+    margin-left: 10px;
+}
+.active-link{
+    display: flex;
+    /* width: 20px; */
+    gap: 25px;
+    margin-top:25px ;
+    text-align: center;
+    font-family: Arial;
+    margin-left: -14px;
+   
+}
+.active-link a{
+   text-decoration: none;
+   color: rgb(43, 41, 41);
+   font-size: 17px;
+}
+.active-link i{
+    size: 10px;
+}
+input::placeholder{
+        font-family: Arial;
+        color: rgb(144, 155, 165);
+        font-size: 16px;
+}
+
+.level-3{
+    width: 100%;
+    float: left;
+    height: 40px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    /* flex-wrap: wrap; */
+    /* gap: 40px; */
+} 
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: -5px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: Arial;
+}
+ul li a:hover{
+    color: rgb(145, 152, 40);
+    /* scrollbar-arrow-color: beige; */
+    box-shadow: 2px 2px 5px #fc894d;
+    display: none;
+    display: block;
+
+    
+}
+#red{
+    color: rgb(190, 29, 29);
+}
+.search{
+    width: 70%;
+    float: left;
+    /* margin-left: 270px; */
+}
+.search  i{
+    /* padding: 10px; */
+}
+.srch{
+    font-family: 'Times New Roman';
+    width: 90%;
+    height: 36px;
+    background-color: rgb(230, 234, 238);
+    border: 1px solid rgb(192, 196, 201);
+    margin-top: 35px;
+    border-right: none;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.btn{
+    width: 50px;
+    height: 36px ;
+    background: red;
+    /* border: 2px solid blue; */
+    border: 0px;
+    margin-top: 35px;
+    color: white;
+    font-size: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.btn > i{
+        font-size: x-large;
+}
+.btn:focus{
+    outline: none;
+}
+.srch:focus{
+    outline: none;
+}
+.ovr{
+    font-size: 48px;
+    font-family: system-ui;
+    font-weight: 200;
+    /* margin-bottom: 100px; */
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {  
+
+    .level-3 li{
+        /* flex-wrap: wrap; */
+        display: none;
+    }
+
+  }
+
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {   
+
+        .level-3 li{
+            /* flex-wrap: wrap; */
+            display: none;
+        }
+
+     }
+
+    /* .level-3{
+      margin-top: 30px;
+    } */
+
+    /* __________________________________________ */
+    </style>
+  </head>
+  <body>
+    <section id="head">
+      <div id="container">
+        <div class="level-1">
+            <p>Ships to :</p>
+            <img src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif" alt="Indian flage">
+            <h5>INDIA</h5>
+        </div>
+    <div class="level-2">
+            
+        <div class="logo">
+            <img src="https://companieslogo.com/img/orig/OSTK-35dbe613.png?t=1659805054" alt="logo">
+        </div> 
+        
+        <div >
+          <a href="index.html" > <h3 class="ovr">overstock</h3></a>
+        </div>
+    <form class="search">
+        <!-- <div class="search"> -->
+            <input type="search" class="srch" placeholder="Search.....everything you find ships for free" > 
+            <a href="#"><button class="btn"><i class="fa fa-magnifying-glass"></i> </button></a>      
+        <!-- </div> -->
+    </form>
+        <div class="active-link">
+            <a href="login.html"><i class=" fa -thin fa-user fa-2x"></i> <br> Account </a> 
+            <!-- <a href="#"><i class="fa-regular fa-heart fa-2x"></i><br> List</a>   -->
+            <a href="cart.html"> <i class="fa fa-cart-plus fa-2x "></i> <br> Cart</a>  
+        </div>
+    </div>    
+    <div class="level-3">
+            <ul id="wrap">
+                <li><a href="furniture.html">Furniture</a></li>
+                <li><a href="rugs.html">Rugs</a></li>
+                <li><a href="light.html">Lights</a></li>
+                <li><a href="bedding.html">Kitchen</a></li>
+                <li><a href="#">Outdoor</a></li>
+                <li><a href="#">Bath</a></li>
+                <li><a href="#">More</a></li>
+                <li><a href="#" id="red">Sales & Deals</a></li>
+            </ul>
+
+    </div>
+</div>
+    </section>
+    <div id="prod">
+      <div id="items">
+        <div id="side">
+         
+        </div>
+        <div id="side">
+          
+        </div>
+        <div id="side">
+         
+        </div>
+      </div>
+      <div id="total">
+        <p>Total products :<span id="one">0</span></p>
+        <p>Total Price :<span id="two">₹ 0</span></p>
+        <br>
+       <hr>
+       <a href="payment.html">
+       <button id="pay">PAY</button></a>
+      </div>
+    </div>
+   
+    </div>
+  </body>
+</html>
+
+<script>
+
+  var cartarr = JSON.parse(localStorage.getItem("cartLD")) || []
+   displaydata(cartarr);
+ console.log(cartarr)
+  function displaydata(data) {
+    document.getElementById("items").innerText=""
+    data.map(function (x,index) {
+      var image = document.createElement("img");
+      image.setAttribute("src", x.image_url);
+      image.setAttribute("class", "image");
+
+      var name1 = document.createElement("h4");
+      name1.textContent = x.name;
+      name1.setAttribute("class", "name1");
+
+      var rating = document.createElement("p");
+      rating.textContent = x.rating;
+      rating.setAttribute("class", "rating");
+
+      var price = document.createElement("p");
+      price.textContent = x.price;
+      price.setAttribute("class", "price");
+
+
+      var button1 = document.createElement("button");
+      button1.textContent = "Delete"
+      button1.setAttribute("class", "button1");
+      button1.addEventListener("click",function(){
+             deletitem(x,index)
+      })
+      
+      
+      document.getElementById("items").append(image,name1, rating, price,button1);
+    });
+
+  }
+
+
+//   var t=0;
+//  var t=cartarr.map(function(elem) {
+//     var str = elem.price;
+//       var matches = str.match(/(\d+)/);
+//       var x = parseInt(matches[0]);
+//       return t=t+x;
+      
+// });
+
+// var toll=t.reduce(function(a,b){
+//     return a+b;
+// })
+// document.querySelector("span").innerText="₹ "+toll;
+
+
+var toll=0
+function deletitem(x,index){
+       cartarr.splice(index,1);
+      localStorage.setItem("cartLD", JSON.stringify(cartarr));
+//       var t=0;
+//  var t=cartarr.map(function(elem) {
+//     var str = elem.price;
+   
+//       var matches = str.match(/(\d+)/);
+//       var x = parseInt(matches[0]);
+//       return t=t+x;
+      
+// });
+
+//  toll=t.reduce(function(a,b){
+  
+//     return a+b;
+// })
+// document.getElementById("two").innerText="₹ "+toll;
+// console.log(toll)
+var e=0;
+for(var i=0;i<cartarr.length;i++){
+  var str =cartarr[i].price;
+      var matches = str.match(/(\d+)/);
+      var x = parseInt(matches[0]);
+     e=e+x
+}
+document.getElementById("two").innerText="₹ "+e;
+localStorage.setItem("total_price",e)
+document.getElementById("one").innerText=cartarr.length;
+      displaydata(cartarr)
+    }
+
+    var e=0;
+for(var i=0;i<cartarr.length;i++){
+  var str = cartarr[i].price;
+      var matches = str.match(/(\d+)/);
+      var x = parseInt(matches[0]);
+     e=e+x
+}
+document.getElementById("two").innerText="₹ "+e;
+localStorage.setItem("total_price",e)
+
+  
+//     var t=0;
+//  var t=cartarr.map(function(elem) {
+//     var str = elem.price;
+//       var matches = str.match(/(\d+)/);
+//       var x = parseInt(matches[0]);
+//       return t=t+x;
+      
+// });
+
+// var toll=t.reduce(function(a,b){
+//     return a+b;
+// })
+// document.getElementById("two").innerText="₹ "+toll;
+document.getElementById("one").innerText=cartarr.length;
+   
+</script>
+<script src="https://kit.fontawesome.com/d5e11ff79d.js" crossorigin="anonymous"></script>
+
+<!-- <script>
+var xy = JSON.parse(localStorage.getItem("cartLD")) || []
+console.log(xy)
+var e=0;
+for(var i=0;i<xy.length;i++){
+  var str = xy[i].price;
+      var matches = str.match(/(\d+)/);
+      var x = parseInt(matches[0]);
+     e=e+x
+}
+document.getElementById("two").innerText="₹ "+e;
+// var t=0;
+// var x=0;
+//  var t=xy.forEach(function(elem) {
+//     var str = elem.price;
+//       var matches = str.match(/(\d+)/);
+//       var x = parseInt(matches[0]);
+//      t=t+x;
+//      x=t;
+// });
+ document.getElementById("two").innerText="₹ "+e;
+</script> -->

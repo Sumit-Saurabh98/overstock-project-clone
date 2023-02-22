@@ -1,0 +1,162 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#container{
+    width: 70%;
+    margin: auto;
+}
+
+#header{
+    display: flex;
+    height: 50px;
+    padding: 0px 16px;
+    justify-content: space-between;
+
+}
+#header>img{
+    cursor: pointer;
+}
+
+#bar{
+    width: 100%;
+    height: 1px;
+    
+    background-color: rgb(218, 218, 219);
+}
+
+#header-2{
+    width: 100%;
+    display: flex;
+    margin-top: 16px;
+    align-items: center;
+    justify-content: baseline;
+    gap: 16px;
+
+}
+
+#header-2>img{
+    width: 120px;
+    height: 40px;
+}
+
+#form{
+    width: 100%;
+    margin-top: 8px;
+
+}
+
+#form>table{
+    width: 50%;
+    border: 1px solid gainsboro;
+}
+
+#form tbody td{
+    padding: 4px;
+}
+
+
+#heading{
+    text-align: left;
+    width: 100%;
+    font-weight: bold;
+}
+#form>table thead{ 
+    background-color: aliceblue;
+    border: 1px solid gainsboro;
+}
+
+#order-sum{
+    width: 100%;
+    margin-top: 50px;
+}
+
+#order-sum>table>thead{
+    background-color: aliceblue;
+    border: 1px solid gainsboro;
+
+}
+
+#order-sum>table{
+    width: 100%;
+    border: 1px solid gainsboro;
+}
+
+#order-sum>table>tbody>tr:last-child,#order-sum>table>tbody>tr:nth-child(3)>td:nth-child(2),#order-sum>table>tbody>tr:nth-child(2)>td:nth-child(2){
+    font-weight: bold;
+
+}
+
+#payment{
+    margin-top: 50px;
+    width: 50%;
+}
+#container>a{
+    color: gray;
+}
+#payment>table{
+    border: 1px solid gainsboro;
+}
+
+#payment>table>thead{
+    background-color: aliceblue;
+    border: 1px solid gainsboro;
+}
+#placeOrder{
+    padding: 8px;
+    margin-top: 16px;
+    background-color: yellowgreen;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+    border: none;
+}
+#placeOrder:hover{
+    background-color: rgb(97, 137, 18);
+}
+#footer{
+    margin-top: 100px;
+    width: 100%;
+}
+
+@media all and (max-width: 950px) and (min-width:601px){
+    #form>table{
+        width: 100%;
+    }
+    #payment{
+        margin-top: 50px;
+        width: 100%;
+    }
+    #footer{
+        margin-top: 100px;
+        width: 80%;
+    }
+
+}
+
+@media all and (max-width: 601px) and (min-width:200px){
+    #container{
+        width: 90%;
+    }
+    #footer{
+       display: none;
+    }
+
+    #header{
+        flex-direction: column;
+    }
+
+    #header-2{
+        flex-direction: column;
+        margin-top: 100px;
+    }
+
+    #form>table{
+        width: 100%;
+    }
+    #payment{
+        margin-top: 50px;
+        width: 100%;
+    }
+
+}

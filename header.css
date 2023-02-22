@@ -1,0 +1,177 @@
+.level-1{
+    display:flex;
+    gap: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 30px;
+    background-color:rgb(235, 240, 245);
+}
+.level-1 >img{
+        width: 40px;
+        height:30px;
+        margin-top: -3px;
+        clip-path: circle();
+        margin-left: -3px;
+        
+
+}
+.level-1 p{
+    margin-top: 2px;
+    margin-left: 13px;
+    font-family: Arial;
+    color: rgb(167, 173, 177);
+}
+.level-1 h5{
+    margin-top: 4px;
+    font-family: Arial;
+    font-size: 15px;
+}
+.level-2{
+    width: 100%;
+    display:flex;
+    gap: 8px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    height: 100px;
+}
+.logo>img{
+    width: 35px;
+    height: 35px;
+    margin-right: 1px;
+    margin-top: 35px;
+    margin-left: 10px;
+}
+.active-link{
+    display: flex;
+    /* width: 20px; */
+    gap: 25px;
+    margin-top:25px ;
+    text-align: center;
+    font-family: Arial;
+    margin-left: -14px;
+   
+}
+.active-link a{
+   text-decoration: none;
+   color: rgb(43, 41, 41);
+   font-size: 17px;
+}
+.active-link i{
+    size: 10px;
+}
+input::placeholder{
+        font-family: Arial;
+        color: rgb(144, 155, 165);
+        font-size: 16px;
+}
+
+.level-3{
+    width: 100%;
+    float: left;
+    height: 40px;
+    box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+    /* flex-wrap: wrap; */
+    /* gap: 40px; */
+} 
+ul{
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 70px;
+}
+
+ul li{
+    list-style: none;
+    margin-left: 62px;
+    margin-top: -5px;
+    font-size: 15px;
+    font-weight: bold;
+
+}
+
+ul li a{
+    text-decoration: none;
+    color: black;
+    font-family: Arial;
+}
+ul li a:hover{
+    color: rgb(145, 152, 40);
+    /* scrollbar-arrow-color: beige; */
+    box-shadow: 2px 2px 5px #fc894d;
+    display: none;
+    display: block;
+
+    
+}
+#red{
+    color: rgb(190, 29, 29);
+}
+.search{
+    width: 70%;
+    float: left;
+    /* margin-left: 270px; */
+}
+.search  i{
+    /* padding: 10px; */
+}
+.srch{
+    font-family: 'Times New Roman';
+    width: 90%;
+    height: 36px;
+    background-color: rgb(230, 234, 238);
+    border: 1px solid rgb(192, 196, 201);
+    margin-top: 35px;
+    border-right: none;
+    float: left;
+    padding: 10px;
+    border-bottom-left-radius: 5px;
+    border-top-left-radius: 5px;
+}
+.btn{
+    width: 50px;
+    height: 36px ;
+    background: red;
+    /* border: 2px solid blue; */
+    border: 0px;
+    margin-top: 35px;
+    color: white;
+    font-size: 15px;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.btn > i{
+        font-size: x-large;
+}
+.btn:focus{
+    outline: none;
+}
+.srch:focus{
+    outline: none;
+}
+.ovr{
+    font-size: 48px;
+    font-family: system-ui;
+    font-weight: 200;
+    /* margin-bottom: 100px; */
+    margin-top: 20px;
+    margin-right: 25px;
+}
+
+
+@media only screen and (min-width: 0px) and (max-width: 480px) {  
+
+    .level-3 li{
+        /* flex-wrap: wrap; */
+        display: none;
+    }
+
+  }
+
+
+  @media only screen and (min-width: 481px) and (max-width: 768px) {   
+
+        .level-3 li{
+            /* flex-wrap: wrap; */
+            display: none;
+        }
+
+     }

@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <style>
+        /* ********************************************************* */
+      .level-1 {
+        display: flex;
+        gap: 8px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        height: 30px;
+        background-color: rgb(235, 240, 245);
+      }
+      .level-1 > img {
+        width: 40px;
+        height: 30px;
+        margin-top: -3px;
+        clip-path: circle();
+        margin-left: -3px;
+      }
+      .level-1 p {
+        margin-top: 2px;
+        /* margin-left: 13px; */
+        font-family: Arial;
+        color: rgb(167, 173, 177);
+      }
+      .level-1 h5 {
+        margin-top: 4px;
+        font-family: Arial;
+        font-size: 15px;
+      }
+      .level-2 {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        height: 100px;
+      }
+      .logo > img {
+        width: 35px;
+        height: 35px;
+        margin-right: 1px;
+        margin-top: 35px;
+        margin-left: 10px;
+      }
+      .active-link {
+        display: flex;
+        /* width: 20px; */
+        gap: 25px;
+        margin-top: 25px;
+        text-align: center;
+        font-family: Arial;
+        margin-left: -14px;
+      }
+      .active-link a {
+        text-decoration: none;
+        color: rgb(43, 41, 41);
+        font-size: 17px;
+      }
+      .active-link i {
+        size: 10px;
+      }
+      input::placeholder {
+        font-family: Arial;
+        color: rgb(144, 155, 165);
+        font-size: 16px;
+      }
+
+      .level-2 img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .level-2 img {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+      }
+
+      .level-3 {
+        /* width: 100%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: center; */
+        /* float: left;
+    height: 40px; */
+        /* box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1); */
+        /* flex-wrap: wrap; */
+        /* gap: 40px; */
+      }
+      ul {
+        margin: auto;
+        margin-top: 20px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* ul li {
+
+        font-size: 15px;
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+      } */
+
+      #wrap li {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+      ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: Arial;
+      }
+      ul li a:hover {
+        color: rgb(145, 152, 40);
+        /* scrollbar-arrow-color: beige; */
+        box-shadow: 2px 2px 5px #fc894d;
+        display: none;
+        display: block;
+      }
+      #red {
+        color: rgb(190, 29, 29);
+      }
+      .search {
+        width: 70%;
+        display: flex;
+        margin-right: 30px;
+        /* float: left; */
+        /* margin-left: 270px; */
+      }
+      .search i {
+        /* padding: 10px; */
+      }
+      .srch {
+        display: flex;
+
+        font-family: "Times New Roman";
+        width: 100%;
+        height: 36px;
+        background-color: rgb(230, 234, 238);
+        border: 1px solid rgb(192, 196, 201);
+        margin-top: 35px;
+        border-right: none;
+        /* float: left; */
+        padding: 10px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+      .btn {
+        width: 50px;
+        height: 36px;
+        background: red;
+        /* border: 2px solid blue; */
+        border: 0px;
+        margin-top: 35px;
+        color: white;
+        font-size: 15px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .btn > i {
+        font-size: x-large;
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .srch:focus {
+        outline: none;
+      }
+      .ovr {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 30px;
+        font-family: system-ui;
+        font-weight: 200;
+        /* margin-bottom: 100px; */
+        margin-top: 30px;
+        margin-right: 25px;
+      }
+
+      /* **************************************************** */
+        * {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+  }
+
+  nav {
+display: flex;
+justify-content: flex-end;
+align-items: center;
+background-color: #fff;
+border: 2px solid rgb(15, 10, 10);
+color: #fff;
+padding: 10px 20px;
+}
+
+nav a {
+color: black;
+text-decoration: none;
+}
+
+nav .nav-links {
+display: flex;
+}
+
+nav .nav-links li {
+margin: 0 10px;
+list-style: none;
+}
+
+nav .login-signup {
+margin-left: auto;
+}
+/* div */
+#login-form-div {
+    width: 50%;
+    height: 50%;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px #888;
+    background-color: #fff;
+    flex-direction: column;
+  }
+  
+  #login-form-div h2 {
+    padding-bottom: 20px;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  #login-form-div form {
+    margin: auto;
+    width: 60%;
+  }
+  
+  #login-form-div form input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 20px;
+  }
+  
+  #login-form-div form input[type="submit"] {
+    background-color: rgb(9, 102, 118);;
+    color: #fff;
+    cursor: pointer;
+  }
+  
+  #login-form-div form input[type="submit"]:hover {
+    background-color: #555;
+  }
+  
+    </style>
+  </head>
+
+  <body>
+    <!-- ------------------------------------------------------- -->
+    <section>
+        <div id="container">
+          <div class="level-1">
+              <p>Ships to :</p>
+              <img src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif" alt="Indian flage">
+              <h5>INDIA</h5>
+          </div>
+      <div class="level-2">
+              
+          <div class="logo">
+              <img src="https://companieslogo.com/img/orig/OSTK-35dbe613.png?t=1659805054" alt="logo">
+          </div> 
+          
+          <div >
+              <a href="index.html" > <h3 class="ovr">overstock</h3></a>
+          </div>
+      <form class="search">
+          <!-- <div class="search"> -->
+              <input type="search" class="srch" placeholder="Search.....everything you find ships for free" > 
+              <a href="#"><button class="btn"><i class="fa fa-magnifying-glass"></i> </button></a>      
+          <!-- </div> -->
+      </form>
+          <div class="active-link">
+              <a href="#"><i class=" fa -thin fa-user fa-2x"></i> <br> Account </a> 
+              <!-- <a href="#"><i class="fa-regular fa-heart fa-2x"></i><br> List</a>   -->
+              <a href="cart.html"> <i class="fa fa-cart-plus fa-2x "></i> <br> Cart</a>  
+          </div>
+      </div>    
+      <div class="level-3">
+              <ul id="wrap">
+                  <li><a href="#">Furniture</a></li>
+                  <li><a href="#">Rugs</a></li>
+                  <li><a href="#">Home Improvement</a></li>
+                  <li><a href="#">Kitchen</a></li>
+                  <li><a href="#">Outdoor</a></li>
+                  <li><a href="#">Bath</a></li>
+                  <li><a href="#">More</a></li>
+                  <li><a href="#" id="red">Sales & Deals</a></li>
+              </ul>
+  
+      </div>
+  </div>
+  
+      </section>
+      <!-- ------------------------------------------------------- -->
+    <div id="login-form-div">
+      <h2>Login</h2>
+      <form>
+        <!--Write form input elements here-->
+        <input
+          type="email"
+          placeholder="Enter Your Email"
+          name="email"
+          required
+        />
+        <input
+          type="password"
+          placeholder="Enter Your Password"
+          name="password"
+          required
+        />
+        <input type="submit" value="Signin" />
+      </form>
+    </div>
+  </body>
+  <script>
+    const loginForm = document.querySelector("#login-form-div form");
+
+loginForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const email = loginForm.elements["email"].value;
+  const password = loginForm.elements["password"].value;
+
+  const users = JSON.parse(localStorage.getItem("users")) || [];
+
+  const user = users.find((user) => user.email === email && user.password === password);
+
+  if (user) {
+    alert("Login Successful!");
+    window.location.href = "index.html";
+  } else {
+    alert("Invalid email or password!");
+  }
+});
+
+  </script>
+</html>
+
+<script
+  src="https://kit.fontawesome.com/25bb53796d.js"
+  crossorigin="anonymous"
+></script>

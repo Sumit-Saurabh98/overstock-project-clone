@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>rugs</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .addToCart {
+        background-color: teal;
+        color: white;
+        border-radius: 10px;
+        border: none;
+        width: 100%;
+        padding: 5px;
+      }
+      .addToCart:hover {
+        background-color: red;
+        scale: 1.2;
+      }
+
+      #main-container {
+        width: 90%;
+        margin: auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+
+      #main-container > div {
+        border-radius: 20px;
+        justify-content: center;
+        text-align: center;
+        padding: 10px;
+        box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+      }
+
+      #main-container > div img {
+        transition: transform 0.5s;
+      }
+
+      #main-container > div img:hover {
+        transform: scale(1.2);
+        border-radius: 10px;
+      }
+
+      #main-container > div h2 {
+        transition: transform 0.5s;
+      }
+
+      #main-container > div h2:hover {
+        transform: scale(1.2);
+        border-radius: 10px;
+      }
+
+      .priceBox {
+        margin: 10px;
+        display: flex;
+        justify-content: space-between;
+      }
+      img {
+        width: 100%;
+      }
+      .strikedoffprice {
+        text-decoration: line-through;
+        color: red;
+      }
+      .ratingBox {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+      }
+      .Details {
+        width: 50px;
+        height: 20px;
+        background-color: rgb(19, 128, 19);
+        border: none;
+        color: white;
+        border-radius: 5px;
+      }
+      .Details:hover {
+        background-color: red;
+        color: white;
+      }
+      .rating {
+        font-size: 20px;
+        color: gold;
+        font-weight: 800;
+      }
+
+      @media all and (max-width: 575px) {
+        #main-container {
+          display: grid;
+          grid-template-columns: repeat(1, 1fr);
+          gap: 10px;
+        }
+      }
+
+      @media all and (min-width: 576px) and (max-width: 800px) {
+        #main-container {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 10px;
+        }
+      }
+
+      @media all and (min-width: 801px) and (max-width: 1080px) {
+        #main-container {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          gap: 10px;
+        }
+      }
+
+      #top-container {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin-bottom: 20px;
+        margin-left: 5%;
+
+        width: 433px;
+        border: 4px solid black;
+        animation: mymove 5s infinite;
+      }
+      @keyframes mymove {
+        50% {
+          border-color: rgb(176, 178, 178);
+        }
+        100% {
+          border-color: rgb(238, 189, 99);
+        }
+      }
+
+      #top-container > div {
+        padding: 10px;
+        background-color: #eae6e6;
+      }
+
+      #filter,
+      #sort {
+        font-size: 20px;
+        padding: 10px;
+      }
+      #filter option,
+      #sort option {
+        color: rgb(12, 12, 12);
+      }
+
+      /* slidee show start */
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+      }
+      .mySlides {
+        /* display: none; */
+
+        width: 100%;
+      }
+
+      img {
+        vertical-align: middle;
+        width: 100%;
+        height: 400px;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+      }
+      .mySlides {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+
+      /* Slideshow container */
+      .slideshow-container {
+        height: 500px;
+        max-width: 90%;
+        margin-left: 3%;
+        margin-right: 3%;
+        position: relative;
+        margin: auto;
+
+        margin-top: 20px;
+      }
+      .slideshow-container img {
+        min-height: 100%;
+      }
+
+      /* Caption text */
+      .text {
+        color: #f2f2f2;
+        font-size: 15px;
+        padding: 8px 12px;
+        position: absolute;
+        bottom: 8px;
+        width: 100%;
+        text-align: center;
+      }
+
+      /* Number text (1/3 etc) */
+      .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+      }
+
+      /* The dots/bullets/indicators */
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      .active {
+        background-color: #717171;
+      }
+
+      /* Fading animation */
+      .fade {
+        animation-name: fade;
+        animation-duration: 1.5s;
+      }
+
+      @keyframes fade {
+        from {
+          opacity: 0.4;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* On smaller screens, decrease text size */
+      @media only screen and (max-width: 300px) {
+        .text {
+          font-size: 11px;
+        }
+      }
+
+      /* slide show end */
+
+      /* pagination */
+      .section-p1 {
+        padding: 40px 80px;
+      }
+
+      #pagination {
+        text-align: center;
+        /* cop */
+      }
+
+      #pagination a {
+        text-decoration: none;
+        background-color: #088178;
+        padding: 15px 20px;
+        border-radius: 4px;
+        color: #fff;
+        font-weight: 600;
+        /* cop */
+      }
+
+      #pagination a i {
+        font-size: 16px;
+        font-weight: 600;
+        /* cop */
+      }
+
+      @media (max-width: 799px) {
+        .section-p1 {
+          padding: 40px 40px;
+          /* cop */
+        }
+
+        #banner3 {
+          padding: 0 40px;
+        }
+
+        #banner3 .banner-box {
+          width: 28%;
+        }
+      }
+
+      @media (max-width: 477px) {
+        .section-p1 {
+          padding: 20px;
+          /* cop */
+        }
+
+        #banner3 {
+          padding: 0 20px;
+        }
+
+        #banner3 .banner-box {
+          width: 100%;
+        }
+      }
+
+      /* end pagination */
+
+      /* banner 3 start */
+      #banner3 {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 80px;
+      }
+
+      #banner3 .banner-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        background-image: url("https://ak1.ostkcdn.com/img/mxc/12292022-MOPS-WinterUpdate-Frame2.jpg?imwidth=3840");
+        min-width: 30%;
+        height: 30vh;
+        background-size: cover;
+        background-position: center;
+        padding: 20px;
+        margin-bottom: 20px;
+      }
+
+      #banner3 .banner-box2 {
+        background-image: url("https://ak1.ostkcdn.com/img/mxc/12292022-MOPS-WinterUpdate-Frame3.jpg?imwidth=3840");
+      }
+
+      #banner3 .banner-box3 {
+        background-image: url("https://ak1.ostkcdn.com/img/mxc/12292022-MOPS-WinterUpdate-Frame4.jpg?imwidth=3840");
+      }
+
+      #banner3 h2 {
+        color: #fff;
+        font-weight: 900;
+        font-size: 22px;
+      }
+
+      #banner3 h3 {
+        color: #ec544e;
+        font-weight: 800;
+        font-size: 15px;
+      }
+
+      #banner3 .banner-box2 h2 {
+        transition: transform 0.5s;
+      }
+
+      #banner3 .banner-box2 h2:hover {
+        transform: scale(1.2);
+      }
+
+      #banner3 .banner-box3 h2 {
+        transition: transform 0.5s;
+      }
+
+      #banner3 .banner-box3 h2:hover {
+        transform: scale(1.2);
+      }
+
+      #banner3 .banner-box h2 {
+        transition: transform 0.5s;
+      }
+
+      #banner3 .banner-box h2:hover {
+        transform: scale(1.4);
+      }
+      /* banner 3 end */
+
+      /* ********************************************************* */
+      .level-1 {
+        display: flex;
+        gap: 8px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        height: 30px;
+        background-color: rgb(235, 240, 245);
+      }
+      .level-1 > img {
+        width: 40px;
+        height: 30px;
+        margin-top: -3px;
+        clip-path: circle();
+        margin-left: -3px;
+      }
+      .level-1 p {
+        margin-top: 2px;
+        /* margin-left: 13px; */
+        font-family: Arial;
+        color: rgb(167, 173, 177);
+      }
+      .level-1 h5 {
+        margin-top: 4px;
+        font-family: Arial;
+        font-size: 15px;
+      }
+      .level-2 {
+        width: 100%;
+        display: flex;
+        gap: 8px;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.1);
+        height: 100px;
+      }
+      .logo > img {
+        width: 35px;
+        height: 35px;
+        margin-right: 1px;
+        margin-top: 35px;
+        margin-left: 10px;
+      }
+      .active-link {
+        display: flex;
+        /* width: 20px; */
+        gap: 25px;
+        margin-top: 25px;
+        text-align: center;
+        font-family: Arial;
+        margin-left: -14px;
+      }
+      .active-link a {
+        text-decoration: none;
+        color: rgb(43, 41, 41);
+        font-size: 17px;
+      }
+      .active-link i {
+        size: 10px;
+      }
+      input::placeholder {
+        font-family: Arial;
+        color: rgb(144, 155, 165);
+        font-size: 16px;
+      }
+
+      .level-2 img {
+        width: 40px;
+        height: 40px;
+      }
+
+      .level-2 img {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        width: 40px;
+        height: 40px;
+      }
+
+     
+      ul {
+        margin: auto;
+        margin-top: 20px;
+        width: 90%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        justify-content: space-between;
+        display: flex;
+        flex-wrap: wrap;
+      }
+
+      /* ul li {
+
+        font-size: 15px;
+        font-weight: bold;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        justify-content: space-between;
+        align-items: center;
+      } */
+
+      #wrap li {
+        font-size: 20px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
+
+      ul li a {
+        text-decoration: none;
+        color: black;
+        font-family: Arial;
+      }
+      ul li a:hover {
+        color: rgb(145, 152, 40);
+        /* scrollbar-arrow-color: beige; */
+        box-shadow: 2px 2px 5px #fc894d;
+        display: none;
+        display: block;
+      }
+
+      /* .level-3 li {
+    display: flex;
+    justify-content: space-between;
+      } */
+      #red {
+        color: rgb(190, 29, 29);
+      }
+      .search {
+        width: 70%;
+        display: flex;
+        margin-right: 30px;
+        /* float: left; */
+        /* margin-left: 270px; */
+      }
+      .search i {
+        /* padding: 10px; */
+      }
+      .srch {
+        display: flex;
+
+        font-family: "Times New Roman";
+        width: 100%;
+        height: 36px;
+        background-color: rgb(230, 234, 238);
+        border: 1px solid rgb(192, 196, 201);
+        margin-top: 35px;
+        border-right: none;
+        /* float: left; */
+        padding: 10px;
+        border-bottom-left-radius: 5px;
+        border-top-left-radius: 5px;
+      }
+      .btn {
+        width: 50px;
+        height: 36px;
+        background: red;
+        /* border: 2px solid blue; */
+        border: 0px;
+        margin-top: 35px;
+        color: white;
+        font-size: 15px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+      }
+      .btn > i {
+        font-size: x-large;
+      }
+      .btn:focus {
+        outline: none;
+      }
+      .srch:focus {
+        outline: none;
+      }
+      .ovr {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        font-size: 30px;
+        font-family: system-ui;
+        font-weight: 200;
+        /* margin-bottom: 100px; */
+        margin-top: 30px;
+        margin-right: 25px;
+      }
+
+      /* **************************************************** */
+    </style>
+  </head>
+  <body>
+    <!-- ------------------------------------------------------- -->
+    <section>
+      <div id="container">
+        <div class="level-1">
+          <p>Ships to :</p>
+          <img
+            src="https://ak1.ostkcdn.com/img/mxc/intFlag_IN.gif"
+            alt="Indian flage"
+          />
+          <h5>INDIA</h5>
+        </div>
+        <div class="level-2">
+          <div class="logo">
+            <img
+              src="https://companieslogo.com/img/orig/OSTK-35dbe613.png?t=1659805054"
+              alt="logo"
+            />
+          </div>
+
+          <div>
+            <a href="index.html"> <h3 class="ovr">overstock</h3></a>
+          </div>
+          <form class="search">
+            <!-- <div class="search"> -->
+            <input
+              type="search"
+              class="srch"
+              placeholder="Search.....everything you find ships for free"
+            />
+            <a href="#"
+              ><button class="btn">
+                <i class="fa fa-magnifying-glass"></i></button
+            ></a>
+            <!-- </div> -->
+          </form>
+          <div class="active-link">
+            <a href="#"
+              ><i class="fa -thin fa-user fa-2x"></i> <br />
+              Account
+            </a>
+            <!-- <a href="#"><i class="fa-regular fa-heart fa-2x"></i><br> List</a>   -->
+            <a href="cart.html">
+              <i class="fa fa-cart-plus fa-2x"></i> <br />
+              Cart</a
+            >
+          </div>
+        </div>
+        <div class="level-3">
+          <ul id="wrap">
+            <li><a href="#">Furniture</a></li>
+            <li><a href="#">Rugs</a></li>
+            <li><a href="#">Home Improvement</a></li>
+            <li><a href="#">Kitchen</a></li>
+            <li><a href="#">Outdoor</a></li>
+            <li><a href="#">Bath</a></li>
+            <li><a href="#">More</a></li>
+            <li><a href="#" id="red">Sales & Deals</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <!-- ------------------------------------------------------- -->
+    <section id="slideshow">
+      <div class="slideshow-container">
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img
+            src="https://ak1.ostkcdn.com/images/products/is/images/direct/af33bd3433f4ab1075e2dd00aaed772b410e78fe/Covey-Plush-Checkered-Thick-Shag-Area-Rug.jpg?imwidth=480&impolicy=medium"
+            style="width: 100%; height: 500px; object-fit: cover"
+          />
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img
+            src="https://ak1.ostkcdn.com/images/products/is/images/direct/947adaaeb44e27ea4ab99567e0c3cccffce8a51d/SAFAVIEH-Madison-Sabire-Boho-Medallion-Distressed-Rug.jpg?imwidth=480&impolicy=medium"
+            style="width: 100%; height: 500px; object-fit: cover"
+          />
+          <div class="text"></div>
+        </div>
+
+        <div class="mySlides fade">
+          <div class="numbertext"></div>
+          <img
+            src="https://ak1.ostkcdn.com/images/products/is/images/direct/e1ae5c77b004e62556c0228cf6e4f08076f6be11/SAFAVIEH-Handmade-Aspen-Alida-Boho-Medallion-Wool-Rug.jpg?imwidth=480&impolicy=medium"
+            style="width: 100%; height: 500px; object-fit: cover"
+          />
+          <div class="text"></div>
+        </div>
+      </div>
+      <br />
+
+      <div style="text-align: center">
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section>
+    <section id="top-container">
+      <div>
+        <select id="filter">
+          <option value="all">Filter By Rating</option>
+          <option value="★★★★★">★★★★★</option>
+          <option value="★★★★">★★★★</option>
+          <option value="★★★">★★★</option>
+          <option value="★★">★★</option>
+          <option value="★">★</option>
+        </select>
+      </div>
+      <div>
+        <select id="sort">
+          <option value="all">Sort by price</option>
+          <option value="one">Between 1K-10K</option>
+          <option value="two">Between 11K-20K</option>
+          <option value="three">Between 21K-30K</option>
+        </select>
+      </div>
+    </section>
+    <div id="main-container"></div>
+
+    <section id="pagination" class="section-p1">
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+    </section>
+
+    <section id="banner3">
+      <div class="banner-box">
+        <h2>Season Sale</h2>
+        <h3>Winter Collections - 50% Off</h3>
+      </div>
+
+      <div class="banner-box banner-box2">
+        <h2>New Collections</h2>
+        <h3>Spring summer 2023</h3>
+      </div>
+
+      <div class="banner-box banner-box3">
+        <h2>bedding</h2>
+        <h3>New Trendy Collections</h3>
+      </div>
+    </section>
+  </body>
+</html>
+
+<script>
+  var furniture = [
+    {
+      id: 1,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/9b86fb816f68b6c5bf7c495d71f5470d7f20257f/SAFAVIEH-Handmade-Braided-Country-Casual-Lavada-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Harrisburg Tobey Compact Round Dining very-comfortable  Set",
+      price: "₹ 16389",
+      strikedoffprice: "₹ 25000",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 2,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/2f1a88be8f9df5afba4add8a302ab04055f3d8be/SAFAVIEH-Handmade-Cape-Cod-Marget-Boho-Coastal-Jute-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Carson Carrington Klemens Round Dining Table beautiful set",
+      price: "₹ 19000",
+      strikedoffprice: "₹ 21000",
+      rating: "★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 3,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/f37c292000ae2aac2c4fc5e3f6c80e7936c21423/SAFAVIEH-Natural-Fiber-Oceana-Herringbone-Seagrass-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "SAFAVIEH Country Classic Blanchard Dining Chairs (Set of 2)",
+      price: "₹ 13000",
+      strikedoffprice: "₹ 15600",
+      rating: "★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 4,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/5cac4b03d62055b675aace4763fa56463f901e49/SAFAVIEH-Handmade-Rodeo-Drive-Sofoula-Mid-Century-Modern-Abstract-Wool-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Nathan James Hylie Nailhead Wood Pub-Height Counter Bar Stool",
+      price: "₹ 6579",
+      strikedoffprice: "₹ 10000",
+      rating: "★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 5,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/2b707837a5e8e033958220ffcc3bb09f2cae6fa3/SAFAVIEH-Handmade-Chelsea-Rubi-French-Country-Floral-Wool-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Bar Stools Adjustable Armless Swivel PU Leather Barstools Set of 2",
+      price: "₹ 13000",
+      strikedoffprice: "₹ 19000",
+      rating: "r★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 6,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/61a0d72f413be50555cb23d9dc7d3cbb7ac843fb/Alexander-Home-Isabelle-Traditional-Vintage-Border-Printed-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "47 in. Modern X-Door Wine Cabinet beautiful and comfortable",
+      price: "₹ 19000",
+      strikedoffprice: "₹ 19000",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 7,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/0d72ea091148ecda8b6dbe9d0cf29c622eae33c2/SAFAVIEH-Amelia-Modern-Abstract-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Art Leon Adjustable Swivel Barstool very comfortable (Set of 2)",
+      price: "₹ 19000",
+      strikedoffprice: "₹ 19000",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 8,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/970b081b5865a7983da15c183f1f52d28967ed74/SAFAVIEH-Athens-Shag-Ilaha-1.5-inch-Thick-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "The Gray Barn Barish Backless Saddle Seat Counter Stools (Set of 2)",
+      price: "₹ 14300",
+      strikedoffprice: "₹ 15000",
+      rating: "★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 9,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/e3ab403595d774afc897bdf0789c174adbd00e28/SAFAVIEH-Lyndhurst-Feryal-Traditional-Oriental-Medallion-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "East West Furniture Round Table with Two 9-inch Drop Leaves",
+      price: "₹ 4345",
+      strikedoffprice: "₹ 6500",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 10,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/fe77618ffa3521cd49edd506bd0a5e6c5b45e42e/SAFAVIEH-Vintage-Hamadan-Gody-Oriental-Distressed-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Simple Living Carolina Windsor Dining Chairs (Set of 2)",
+      price: "₹ 10650",
+      strikedoffprice: "₹ 19999",
+      rating: "★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 11,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/5c1041cbb5b834e1aea0a027dd87303cbdd76fea/Nickie-Plush-Abstract-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Simple Living Country Cottage Drop-Leaf Dining Table",
+      price: "₹ 11324",
+      strikedoffprice: "₹ 45000",
+      rating: "★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 12,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/e0d9f2f435e5050885598a18d51b391231b1b826/SAFAVIEH-Handmade-Cape-Cod-Ermine-Coastal-Jute-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Simple Living Venice Farmhouse Dining Chairs (Set of 2)",
+      price: "₹ 12345",
+      strikedoffprice: "₹ 29999",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 13,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/e2a9bb4b674d7a4872861847f51abb003b5125fa/SAFAVIEH-Reflection-Gyda-Modern-Oriental-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Carson Carrington Horsens 3-drawer Mid-century Modern Buffet",
+      price: "₹ 15321",
+      strikedoffprice: "₹ 39999",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 14,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/1c4a49f5f8435423d84e5ac03dcabec5fe4620e0/SAFAVIEH-Handmade-Antiquity-Anner-Traditional-Oriental-Wool-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Simple Living Solid Wood Farmhouse Table vry comfortable set",
+      price: "₹ 36580",
+      strikedoffprice: "₹ 49999",
+      rating: "★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 15,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/77a9310679a9a456d6aa93bc173802a79838a34c/SAFAVIEH-Handmade-Classic-Signa-Traditional-Oriental-Wool-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Andeworld farmhouse bar stools ,counter height bar stools set of 4",
+      price: "₹ 19999",
+      strikedoffprice: "₹ 25000",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 16,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/a2847bee31270f086f15346d93859af1a4dded4c/Alexander-Home-Vail-Mid-century-Modern-Geometric-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Solid Pine Drop Leaf Table 3-piece Dining very comfortable Set",
+      price: "₹ 21300",
+      strikedoffprice: "₹ 29999",
+      rating: "★★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 17,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/c9cf2df5e6cf903861de7b9afaa7310df9d57657/SAFAVIEH-Porcello-Thinh-Mid-Century-Modern-Abstract-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Palmer Mid-Century Modern Fabric Dining Chair in 2 Pack",
+      price: "₹ 27600",
+      strikedoffprice: "₹ 39999",
+      rating: "★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 18,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/25ed026e459a7730653551b211fade7a5c3f41c0/Copper-Grove-Oxford-Floral-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Simple Living Shaker Dining Table very comfortable Set",
+      price: "₹ 11500",
+      strikedoffprice: "₹ 19999",
+      rating: "★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 19,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/155b7701ad67aa31762624f97a6951f07ca9ba85/SAFAVIEH-Fiorello-Handmade-Blossom-French-Country-Wool-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Lifestorey Tabaria Four Door Sideboard very comfortable Set",
+      price: "₹ 31567",
+      strikedoffprice: "₹ 34355",
+      rating: "★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+    {
+      id: 20,
+      image_url:
+        "https://ak1.ostkcdn.com/images/products/is/images/direct/d0eee329c2c2f23856f9a12587ae3db4a4e5e86e/Artistic-Weavers-Dellie-Indoor--Outdoor-Traditional-Medallion-Area-Rug.jpg?imwidth=480&impolicy=medium",
+      name: "Stetson Adjustable Height Swivel Metal Bar Stools (Set of 3)",
+      price: "₹ 12456",
+      strikedoffprice: "₹ 40000",
+      rating: "★★★★",
+      Details: "Details",
+      addCart: "Addtocart",
+    },
+  ];
+
+  // var getItem = JSON.parse(localStorage.getItem("book-list")) || [];
+
+  displayData(furniture);
+
+  document.getElementById("filter").addEventListener("change", furfilter);
+  function furfilter() {
+    var x = document.getElementById("filter").value;
+    var s = furniture.filter(function (elem) {
+      if (x === "" || x == "all") {
+        return true;
+      }
+
+      return elem.rating == x;
+    });
+    console.log(s);
+    displayData(s);
+  }
+
+  document.getElementById("sort").addEventListener("change", filterprice);
+  function filterprice() {
+    var x1 = document.getElementById("sort").value;
+    var s = furniture.filter(function (elem) {
+      var str = elem.price;
+      var matches = str.match(/(\d+)/);
+      var x = parseInt(matches[0]);
+      if (x1 === "one" && x > 0 && x < 10000) {
+        return elem;
+      }
+      if (x1 === "two" && x > 10000 && x < 20000) {
+        return elem;
+      }
+      if (x1 === "three" && x > 20000 && x < 30000) {
+        return elem;
+      }
+      if (x1 === "" || x1 == "all") {
+        return true;
+      }
+    });
+    console.log(x1);
+    displayData(s);
+  }
+
+  function displayData(furniture) {
+    document.getElementById("main-container").innerText = "";
+    furniture.map(function (elem, index) {
+      var div = document.createElement("div");
+      div.style.cursor = "pointer";
+
+      var image = document.createElement("img");
+      image.setAttribute("src", elem.image_url);
+
+      var name = document.createElement("h5");
+      name.textContent = elem.name;
+
+      var priceBox = document.createElement("div");
+      priceBox.setAttribute("class", "priceBox");
+
+      var price = document.createElement("h2");
+      price.textContent = elem.price;
+      price.setAttribute("class", "price");
+
+      var strikedoffprice = document.createElement("p");
+      strikedoffprice.textContent = elem.strikedoffprice;
+      strikedoffprice.setAttribute("class", "strikedoffprice");
+
+      priceBox.append(price, strikedoffprice);
+
+      var ratingBox = document.createElement("div");
+
+      rating = document.createElement("p");
+      rating.textContent = elem.rating;
+      rating.setAttribute("class", "rating");
+
+      Details = document.createElement("button");
+      Details.textContent = "Details";
+      Details.setAttribute("class", "Details");
+      Details.onclick = function () {
+        window.location.href = "showDetails.html";
+      };
+
+      Details.addEventListener("click", function () {
+        prod_details(elem, index);
+      });
+
+      ratingBox.append(rating, Details);
+      ratingBox.setAttribute("class", "ratingBox");
+
+      addToCart = document.createElement("button");
+      addToCart.textContent = "Add to Cart";
+      addToCart.setAttribute("class", "addToCart");
+
+      div.append(image, name, priceBox, ratingBox, addToCart);
+      document.getElementById("main-container").append(div);
+    });
+  }
+
+  //  slide show start js
+
+  let slideIndex = 0;
+  showSlides();
+
+  function showSlides() {
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none";
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {
+      slideIndex = 1;
+    }
+    for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+  }
+
+  function prod_details(elem, index) {
+    localStorage.setItem("prod_details", JSON.stringify(elem));
+  }
+</script>
+
+<script
+  src="https://kit.fontawesome.com/25bb53796d.js"
+  crossorigin="anonymous"
+></script>
