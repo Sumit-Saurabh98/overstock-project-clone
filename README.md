@@ -8,7 +8,7 @@ Tech Stack used
 3. JavaScript
 4.
 
-Website contains following pages
+The Website contains the following pages
 1. Home
 2. Product
 3. Product Details
@@ -17,7 +17,7 @@ Website contains following pages
 6. Payment
 7. Congratulations After Sucessfull order
 
-You can see the screenshot of Pages
+You can see the screenshot of the Pages
 
 <img width="960" alt="home1" src="https://user-images.githubusercontent.com/105351295/220554456-dbd6d370-9b44-4e23-8390-5ec5ac0cff8c.png">
 <img width="960" alt="home2" src="https://user-images.githubusercontent.com/105351295/220554479-c717e5d4-f150-42ad-b0fd-486070eda7bc.png">
